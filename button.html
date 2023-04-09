@@ -1,0 +1,138 @@
+<!--
+    Areij Kandi
+  -->
+  <!DOCTYPE html>
+  <html lang="en">
+      <head>
+          <title>AfriMed Finance Society (AFS)</title>
+          <meta charset="utf-8">
+          <link rel="stylesheet" href="css.css">
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,800;1,100;1,200;1,900&display=swap" rel="stylesheet">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      </head>
+      <body id="body_page">
+        <div class="back">
+            <div class="nav_container">
+                <h4></h4>
+                <li class="li"><a class= "back_link"href="index.html" target="_blank"><span>Back</span></a></li>
+
+            </div>
+        </div>
+        <section id="smart_button">
+            <div id="smart-button-container">
+                <div style="text-align: center;">
+                  <div id="paypal-button-container"></div>
+                </div>
+              </div>
+            <script src="https://www.paypal.com/sdk/js?client-id=Ac9_DV8tdg11gFql8XpMhTbPjCG49Q4yzdeITPnFYUW2ux8a3yqCHH3OsILBuJbwUymjWre1w1dfs12p&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+            <script>
+              function initPayPalButton() {
+                paypal.Buttons({
+                  style: {
+                    shape: 'rect',
+                    color: 'gold',
+                    layout: 'vertical',
+                    label: 'paypal',
+                    
+                  },
+          
+                  createOrder: function(data, actions) {
+                    return actions.order.create({
+                      purchase_units: [{"description":"* Registration fees cover the conference, all program materials, the meals and receptions.","amount":{"currency_code":"USD","value":250}}]
+                    });
+                  },
+          
+                  onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(orderData) {
+                      
+                      // Full available details
+                      console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+          
+                      // Show a success message within this page, e.g.
+                      const element = document.getElementById('paypal-button-container');
+                      element.innerHTML = '';
+                      element.innerHTML = '<h3>Thank you for your payment!</h3>';
+          
+                      // Or go to another URL:  actions.redirect('thank_you.html');
+                      
+                    });
+                  },
+          
+                  onError: function(err) {
+                    console.log(err);
+                  }
+                }).render('#paypal-button-container');
+              }
+              initPayPalButton();
+            </script>
+            
+        </section>
+        <section>
+          <div id="smart-button-container">
+            <div style="text-align: center;">
+              <div id="paypal-button-container"></div>
+            </div>
+          </div>
+        <script src="https://www.paypal.com/sdk/js?client-id=Ac9_DV8tdg11gFql8XpMhTbPjCG49Q4yzdeITPnFYUW2ux8a3yqCHH3OsILBuJbwUymjWre1w1dfs12p&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+        <script>
+          function initPayPalButton() {
+            paypal.Buttons({
+              style: {
+                shape: 'rect',
+                color: 'gold',
+                layout: 'vertical',
+                label: 'paypal',
+                
+              },
+      
+              createOrder: function(data, actions) {
+                return actions.order.create({
+                  purchase_units: [{"amount":{"currency_code":"USD","value":250}}]
+                });
+              },
+      
+              onApprove: function(data, actions) {
+                return actions.order.capture().then(function(orderData) {
+                  
+                  // Full available details
+                  console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+      
+                  // Show a success message within this page, e.g.
+                  const element = document.getElementById('paypal-button-container');
+                  element.innerHTML = '';
+                  element.innerHTML = '<h3>Thank you for your payment!</h3>';
+      
+                  // Or go to another URL:  actions.redirect('thank_you.html');
+                  
+                });
+              },
+      
+              onError: function(err) {
+                console.log(err);
+              }
+            }).render('#paypal-button-container');
+          }
+          initPayPalButton();
+        </script>
+        </section>
+        <footer>
+            <div>
+              <a href="https://iconscout.com/icon/linkdin-1" target="_blank">Linkdin Logo Icon</a> by <a href="https://iconscout.com/contributors/ibrandify-icons">Ibrandify Icons</a> on <a href="https://iconscout.com">Iconscout</a>
+            </div>
+            <div>
+                 <a href="https://iconscout.com/illustration/business-deal-2043009" target="_blank">Business deal Illustration</a> by <a href="https://iconscout.com/contributors/delesign">Delesign Graphics</a> on <a href="https://iconscout.com">Iconscout</a>
+            </div>
+            <div>
+                <a href="https://iconscout.com/icons/menu" target="_blank">Menu Icon</a> by <a href="https://iconscout.com/contributors/eva-icons">Akveo</a> on <a href="https://iconscout.com">IconScout</a>
+            </div>
+        </footer>
+         
+       
+
+        <script src="main.js"></script>
+      </body>
+  
+  
+  </html>
